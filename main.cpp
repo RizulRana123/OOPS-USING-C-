@@ -2245,6 +2245,11 @@
 // public:
 //     int data;
 //     Node* next;
+
+//     Node(int val) {
+//         data = val;
+//         next = NULL;
+//     }
 // };
 
 // class LinkedList {
@@ -2256,77 +2261,540 @@
 //         head = NULL;
 //     }
 
-//     void insertEnd(int value) {
-//         Node* newNode = new Node();
-//         newNode->data = value;
-//         newNode->next = NULL;
-
-//         if(head == NULL) {
+//     void insert(int val) {
+//         Node* newNode = new Node(val);
+//         if (!head) {
 //             head = newNode;
 //             return;
 //         }
-
 //         Node* temp = head;
-
-//         while(temp->next != NULL)
+//         while (temp->next)
 //             temp = temp->next;
-
 //         temp->next = newNode;
 //     }
 
-//     void search(int key) {
+//     void reverse() {
+//         Node* prev = NULL;
+//         Node* curr = head;
+//         Node* next = NULL;
 
-//         Node* temp = head;
-//         int position = 1;
-
-//         while(temp != NULL) {
-
-//             if(temp->data == key) {
-//                 cout<<"Element found at position "<<position<<endl;
-//                 return;
-//             }
-
-//             temp = temp->next;
-//             position++;
+//         while (curr != NULL) {
+//             next = curr->next;   // store next node
+//             curr->next = prev;   // reverse link
+//             prev = curr;         // move prev forward
+//             curr = next;         // move curr forward
 //         }
 
-//         cout<<"Element not found"<<endl;
+//         head = prev; // update head
 //     }
 
 //     void display() {
 //         Node* temp = head;
-
-//         while(temp != NULL) {
-//             cout<<temp->data<<" -> ";
+//         while (temp) {
+//             cout << temp->data << " -> ";
 //             temp = temp->next;
 //         }
-
-//         cout<<"NULL"<<endl;
+//         cout << "NULL\n";
 //     }
 // };
 
 // int main() {
+//     LinkedList l;
+//     l.insert(10);
+//     l.insert(20);
+//     l.insert(30);
+//     l.insert(40);
 
-//     LinkedList list;
+//     cout << "Original List:\n";
+//     l.display();
 
-//     list.insertEnd(10);
-//     list.insertEnd(20);
-//     list.insertEnd(30);
-//     list.insertEnd(40);
+//     l.reverse();
 
-//     cout<<"Linked List:"<<endl;
-//     list.display();
-
-//     int key;
-//     cout<<"Enter element to search: ";
-//     cin>>key;
-
-//     list.search(key);
+//     cout << "Reversed List:\n";
+//     l.display();
 
 //     return 0;
 // }
 
-// 65.wap to demonstrate inheritance using class
+
+// 65.develop a library book issued system
+// #include <iostream>
+// using namespace std;
+
+// class Library {
+// private:
+//     int bookId;
+//     string bookName;
+//     bool issued;
+
+// public:
+//     // Constructor
+//     Library() {
+//         issued = false;
+//     }
+
+//     void addBook() {
+//         cout << "Enter Book ID and Name: ";
+//         cin >> bookId >> bookName;
+//         issued = false;
+//         cout << "Book added successfully\n";
+//     }
+
+//     void issueBook() {
+//         if(bookId == 0) {
+//             cout << "No book available\n";
+//             return;
+//         }
+
+//         if(!issued) {
+//             issued = true;
+//             cout << "Book issued successfully\n";
+//         } else {
+//             cout << "Book already issued\n";
+//         }
+//     }
+
+//     void returnBook() {
+//         if(bookId == 0) {
+//             cout << "No book exists\n";
+//             return;
+//         }
+
+//         if(issued) {
+//             issued = false;
+//             cout << "Book returned successfully\n";
+//         } else {
+//             cout << "Book was not issued\n";
+//         }
+//     }
+
+//     void displayStatus() {
+//         if(bookId == 0) {
+//             cout << "No book available\n";
+//             return;
+//         }
+
+//         cout << "\nBook ID: " << bookId;
+//         cout << "\nBook Name: " << bookName;
+//         cout << "\nStatus: " << (issued ? "Issued" : "Available") << endl;
+//     }
+// };
+
+// int main() {
+//     Library lib;
+//     int choice;
+
+//     do {
+//         cout << "\n----- LIBRARY MENU -----\n";
+//         cout << "1. Add Book\n";
+//         cout << "2. Issue Book\n";
+//         cout << "3. Return Book\n";
+//         cout << "4. Display Status\n";
+//         cout << "5. Exit\n";
+//         cout << "Enter choice: ";
+//         cin >> choice;
+
+//         switch(choice) {
+//             case 1: lib.addBook(); break;
+//             case 2: lib.issueBook(); break;
+//             case 3: lib.returnBook(); break;
+//             case 4: lib.displayStatus(); break;
+//         }
+
+//     } while(choice != 5);
+
+//     return 0;
+// }
+
+
+//66.develop a temperature convertor using c++
+// #include <iostream>
+// using namespace std;
+
+// class Temperature {
+// private:
+//     float value;  // encapsulated data
+
+// public:
+//     // Setter
+//     void setValue(float v) {
+//         value = v;
+//     }
+
+//     // Conversion functions
+//     float celsiusToFahrenheit() {
+//         return (value * 9 / 5) + 32;
+//     }
+
+//     float fahrenheitToCelsius() {
+//         return (value - 32) * 5 / 9;
+//     }
+
+//     float celsiusToKelvin() {
+//         return value + 273.15;
+//     }
+
+//     float kelvinToCelsius() {
+//         return value - 273.15;
+//     }
+
+//     // Display menu
+//     void menu() {
+//         cout << "\n--- Temperature Converter ---\n";
+//         cout << "1. Celsius to Fahrenheit\n";
+//         cout << "2. Fahrenheit to Celsius\n";
+//         cout << "3. Celsius to Kelvin\n";
+//         cout << "4. Kelvin to Celsius\n";
+//         cout << "5. Exit\n";
+//         cout << "Enter your choice: ";
+//     }
+// };
+
+// int main() {
+//     Temperature t;
+//     int choice;
+//     float input;
+
+//     do {
+//         t.menu();
+//         cin >> choice;
+
+//         switch (choice) {
+//         case 1:
+//             cout << "Enter temperature in Celsius: ";
+//             cin >> input;
+//             t.setValue(input);
+//             cout << "Fahrenheit = " << t.celsiusToFahrenheit() << endl;
+//             break;
+
+//         case 2:
+//             cout << "Enter temperature in Fahrenheit: ";
+//             cin >> input;
+//             t.setValue(input);
+//             cout << "Celsius = " << t.fahrenheitToCelsius() << endl;
+//             break;
+
+//         case 3:
+//             cout << "Enter temperature in Celsius: ";
+//             cin >> input;
+//             t.setValue(input);
+//             cout << "Kelvin = " << t.celsiusToKelvin() << endl;
+//             break;
+
+//         case 4:
+//             cout << "Enter temperature in Kelvin: ";
+//             cin >> input;
+//             t.setValue(input);
+//             cout << "Celsius = " << t.kelvinToCelsius() << endl;
+//             break;
+
+//         case 5:
+//             cout << "Exiting program...\n";
+//             break;
+
+//         default:
+//             cout << "Invalid choice! Try again.\n";
+//         }
+
+//     } while (choice != 5);
+
+//     return 0;
+// }
+
+// 67.wap to input and dislay a matrix
+// #include <iostream>
+// using namespace std;
+
+// class Matrix {
+// private:
+//     int a[10][10];
+//     int rows, cols;
+
+// public:
+//      Matrix(){
+//         cout<<"enter the no. of rows and columns";
+//         cin>>rows>>cols;
+//         for(int i=0;i<rows;i++)
+//             for(int j=0;j<cols;j++)
+//                 cin >> a[i][j];
+//      }
+
+
+
+//     void display() {
+//         cout << "\nResult Matrix:\n";
+//         for(int i=0;i<rows;i++) {
+//             for(int j=0;j<cols;j++)
+//                 cout << a[i][j] << " ";
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Matrix m;
+//   m.display();
+//     return 0;
+// }
+// 68.wap to add two matrices
+
+// #include <iostream>
+// using namespace std;
+
+// class Matrix {
+// private:
+//     int a[10][10], b[10][10], result[10][10];
+//     int rows, cols;
+
+// public:
+//     void input() {
+//         cout << "Enter rows and columns: ";
+//         cin >> rows >> cols;
+
+//         cout << "Enter Matrix A:\n";
+//         for(int i=0;i<rows;i++)
+//             for(int j=0;j<cols;j++)
+//                 cin >> a[i][j];
+
+//         cout << "Enter Matrix B:\n";
+//         for(int i=0;i<rows;i++)
+//             for(int j=0;j<cols;j++)
+//                 cin >> b[i][j];
+//     }
+
+//     void add() {
+//         for(int i=0;i<rows;i++)
+//             for(int j=0;j<cols;j++)
+//                 result[i][j] = a[i][j] + b[i][j];
+//     }
+
+//     void display() {
+//         cout << "\nResult Matrix:\n";
+//         for(int i=0;i<rows;i++) {
+//             for(int j=0;j<cols;j++)
+//                 cout << result[i][j] << " ";
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Matrix m;
+//     int choice;
+
+//     do {
+//         cout << "\n--- MATRIX MENU ---\n";
+//         cout << "1. Input Matrices\n";
+//         cout << "2. Add Matrices\n";
+//         cout << "3. Display Result\n";
+//         cout << "4. Exit\n";
+//         cout << "Enter choice: ";
+//         cin >> choice;
+
+//         switch(choice) {
+//             case 1: m.input(); break;
+//             case 2: m.add(); break;
+//             case 3: m.display(); break;
+//         }
+
+//     } while(choice != 4);
+
+//     return 0;
+// }
+
+// 69.WAP to multiply two matrices
+// #include <iostream>
+// using namespace std;
+
+// class Matrix {
+// private:
+//     int a[10][10], b[10][10], res[10][10];
+//     int r1,c1,r2,c2;
+
+// public:
+//     void input() {
+//         cout<<"Enter rows & cols of A: ";
+//         cin>>r1>>c1;
+//         cout<<"Enter Matrix A:\n";
+//         for(int i=0;i<r1;i++)
+//             for(int j=0;j<c1;j++)
+//                 cin>>a[i][j];
+
+//         cout<<"Enter rows & cols of B: ";
+//         cin>>r2>>c2;
+//         cout<<"Enter Matrix B:\n";
+//         for(int i=0;i<r2;i++)
+//             for(int j=0;j<c2;j++)
+//                 cin>>b[i][j];
+//     }
+
+//     void multiply() {
+//         if(c1!=r2) {
+//             cout<<"Multiplication not possible\n";
+//             return;
+//         }
+
+//         for(int i=0;i<r1;i++) {
+//             for(int j=0;j<c2;j++) {
+//                 res[i][j]=0;
+//                 for(int k=0;k<c1;k++)
+//                     res[i][j]+=a[i][k]*b[k][j];
+//             }
+//         }
+//         cout<<"Multiplication done\n";
+//     }
+
+//     void display() {
+//         for(int i=0;i<r1;i++) {
+//             for(int j=0;j<c2;j++)
+//                 cout<<res[i][j]<<" ";
+//             cout<<endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Matrix m;
+//     int ch;
+//     do {
+//         cout<<"1.Input 2.Multiply 3.Display 4.Exit\n";
+//         cin>>ch;
+//         if(ch==1) m.input();
+//         else if(ch==2) m.multiply();
+//         else if(ch==3) m.display();
+//     } while(ch!=4);
+// }
+
+// 70.wap to perfor dot product on two vectors
+// #include <iostream>
+// using namespace std;
+
+// class Vector {
+// private:
+//     int a[10], b[10];
+//     int n;
+
+// public:
+//     void input() {
+//         cout << "Enter size of vectors: ";
+//         cin >> n;
+
+//         cout << "Enter elements of Vector A:\n";
+//         for(int i=0;i<n;i++)
+//             cin >> a[i];
+
+//         cout << "Enter elements of Vector B:\n";
+//         for(int i=0;i<n;i++)
+//             cin >> b[i];
+//     }
+
+//     void dotProduct() {
+//         int dot = 0;
+
+//         for(int i=0;i<n;i++)
+//             dot += a[i] * b[i];
+
+//         cout << "Dot Product = " << dot << endl;
+//     }
+
+//     void display() {
+//         cout << "Vector A: ";
+//         for(int i=0;i<n;i++) cout << a[i] << " ";
+
+//         cout << "\nVector B: ";
+//         for(int i=0;i<n;i++) cout << b[i] << " ";
+
+//         cout << endl;
+//     }
+// };
+
+// int main() {
+//     Vector v;
+//     int ch;
+
+//     do {
+//         cout << "\n--- VECTOR MENU ---\n";
+//         cout << "1. Input Vectors\n";
+//         cout << "2. Display Vectors\n";
+//         cout << "3. Dot Product\n";
+//         cout << "4. Exit\n";
+//         cout << "Enter choice: ";
+//         cin >> ch;
+
+//         switch(ch) {
+//             case 1: v.input(); break;
+//             case 2: v.display(); break;
+//             case 3: v.dotProduct(); break;
+//         }
+
+//     } while(ch != 4);
+
+//     return 0;
+// }
+
+
+// 71.wap to demonatrate inheritance
+// #include <iostream>
+// using namespace std;
+
+
+// class Student {
+// protected:
+//     int roll;
+//     string name;
+
+// public:
+//     void getStudent() {
+//         cout << "Enter Roll Number: ";
+//         cin >> roll;
+//         cout << "Enter Name: ";
+//         cin >> name;
+//     }
+
+//     void displayStudent() {
+//         cout << "\nRoll Number: " << roll;
+//         cout << "\nName: " << name;
+//     }
+// };
+
+
+// class Result : public Student {
+// private:
+//     int marks1, marks2, total;
+
+// public:
+//     void getMarks() {
+//         cout << "Enter Marks for Subject 1: ";
+//         cin >> marks1;
+//         cout << "Enter Marks for Subject 2: ";
+//         cin >> marks2;
+//     }
+
+//     void calculate() {
+//         total = marks1 + marks2;
+//     }
+
+//     void displayResult() {
+//         displayStudent();  
+//         cout << "\nMarks 1: " << marks1;
+//         cout << "\nMarks 2: " << marks2;
+//         cout << "\nTotal: " << total << endl;
+//     }
+// };
+
+
+// int main() {
+//     Result r;
+
+//     r.getStudent();
+//     r.getMarks();
+//     r.calculate();
+//     r.displayResult();
+
+//     return 0;
+// }
+
+// 72.wap to demonstrate inheritance using class
 // #include <iostream>
 // using namespace std;
 
@@ -2356,4 +2824,344 @@
 //     c.sub(10,5);
 //     c.mul(10,5);
 //     c.div(10,5);
+// return 0;
+// }
+
+
+// 73🔹 LeetCode #1 — Two Sum
+// Problem:
+// Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     vector<int> twoSum(vector<int>& nums, int target) {
+//         for(int i = 0; i < nums.size(); i++) {
+//             for(int j = i + 1; j < nums.size(); j++) {
+//                 if(nums[i] + nums[j] == target) {
+//                     return {i, j};
+//                 }
+//             }
+//         }
+//         return {};
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums = {2,7,11,15};
+//     vector<int> res = obj.twoSum(nums, 9);
+
+//     cout << res[0] << " " << res[1];
+// }
+
+
+
+// 74🔹 LeetCode #9 — Palindrome Number
+// Problem:
+// Given an integer x, return true if x is a palindrome, and false otherwise.
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Solution {
+// public:
+//     bool isPalindrome(int x) {
+//         if(x < 0) return false;
+
+//         int rev = 0, temp = x;
+//         while(temp > 0) {
+//             rev = rev * 10 + temp % 10;
+//             temp /= 10;
+//         }
+//         return rev == x;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     cout << obj.isPalindrome(121);
+// }
+
+// 75🔹 LeetCode #26 — Remove Duplicates from Sorted Array
+// Problem:
+// Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//         vector<int> temp;
+
+//         for(int i = 0; i < nums.size(); i++) {
+//             bool found = false;
+
+//             for(int j = 0; j < temp.size(); j++) {
+//                 if(nums[i] == temp[j]) {
+//                     found = true;
+//                     break;
+//                 }
+//             }
+
+//             if(!found)
+//                 temp.push_back(nums[i]);
+//         }
+
+//         nums = temp;
+//         return nums.size();
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums = {1,1,2};
+
+//     cout << obj.removeDuplicates(nums);
+
+// }
+
+
+
+// 76🔹 LeetCode #27 — Remove Element
+// Problem:
+// Given an integer array nums and an integer val, remove all occurrences of val in-place.
+// Return the number of elements k that are not equal to val.
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int removeElement(vector<int>& nums, int val) {
+//         vector<int> temp;
+
+//         for(int i = 0; i < nums.size(); i++) {
+//             if(nums[i] != val)
+//                 temp.push_back(nums[i]);
+//         }
+
+//         nums = temp;
+//         return nums.size();
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums = {3,2,2,3};
+
+//     cout << obj.removeElement(nums, 3);
+// }
+
+// 77🔹 LeetCode #121 — Best Time to Buy and Sell Stock
+// Problem:
+// You are given an array prices where prices[i] is the price of a stock on day i.
+// You want to maximize your profit by:
+// Choosing a day to buy
+// Choosing a later day to sell
+// Return the maximum profit you can achieve.
+// If no profit is possible, return 0.
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int maxProfit(vector<int>& prices) {
+//         int maxProfit = 0;
+
+//         for(int i = 0; i < prices.size(); i++) {
+//             for(int j = i+1; j < prices.size(); j++) {
+//                 if(prices[j] - prices[i] > maxProfit)
+//                     maxProfit = prices[j] - prices[i];
+//             }
+//         }
+//         return maxProfit;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> prices = {7,1,5,3,6,4};
+//     cout << obj.maxProfit(prices);
+// }
+
+// 78.🔹HackerRank — Simple Array Sum
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int simpleArraySum(vector<int>& arr) {
+//         int sum = 0;
+
+//         for(int i = 0; i < arr.size(); i++)
+//             sum += arr[i];
+
+//         return sum;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> arr = {1,2,3,4};
+
+//     cout << obj.simpleArraySum(arr);
+// }
+
+
+// 79🔹 LeetCode #136 — Single Number
+// Problem:
+// Given a non-empty array of integers nums, every element appears twice except for one.
+// Find that single one.
+// Find the element that appears once (others appear twice).
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int singleNumber(vector<int>& nums) {
+//         for(int i = 0; i < nums.size(); i++) {
+//             int count = 0;
+
+//             for(int j = 0; j < nums.size(); j++) {
+//                 if(nums[i] == nums[j])
+//                     count++;
+//             }
+
+//             if(count == 1)
+//                 return nums[i];
+//         }
+//         return -1;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums = {2,2,1};
+//     cout << obj.singleNumber(nums);
+// }
+
+// 80.🔹 LeetCode #53 — Maximum Subarray
+// Problem:
+// Given an integer array nums, find the contiguous subarray with the largest sum, and return its sum.
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int maxSubArray(vector<int>& nums) {
+//         int maxSum = nums[0];
+
+//         for(int i = 0; i < nums.size(); i++) {
+//             int sum = 0;
+//             for(int j = i; j < nums.size(); j++) {
+//                 sum += nums[j];
+//                 if(sum > maxSum)
+//                     maxSum = sum;
+//             }
+//         }
+//         return maxSum;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
+//     cout << obj.maxSubArray(nums);
+// }
+
+// 81.🔹hacker rank -- MINI-MAX SUM
+// Find min sum of 4 elements and max sum of 4 elements.
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     void miniMaxSum(vector<int>& arr) {
+//         long total = 0;
+
+//         for(int i = 0; i < arr.size(); i++)
+//             total += arr[i];
+
+//         long minSum = total - arr[0];
+//         long maxSum = total - arr[0];
+
+//         for(int i = 0; i < arr.size(); i++) {
+//             long sum = total - arr[i];
+
+//             if(sum < minSum) minSum = sum;
+//             if(sum > maxSum) maxSum = sum;
+//         }
+
+//         cout << minSum << " " << maxSum;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> arr = {1,2,3,4,5};
+//     obj.miniMaxSum(arr);
+// }
+
+
+
+// 82🔹 LeetCode #88 — Merge Sorted Array
+// Problem:
+// You are given two sorted integer arrays nums1 and nums2, and two integers m and n.
+// nums1 has size m + n
+// First m elements are valid
+// Last n elements are 0 (placeholders)
+// Merge nums2 into nums1 as one sorted array.
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+//         for(int i = 0; i < n; i++) {
+//             nums1[m+i] = nums2[i];
+//         }
+
+//         // simple sort
+//         for(int i = 0; i < m+n; i++) {
+//             for(int j = i+1; j < m+n; j++) {
+//                 if(nums1[i] > nums1[j]) {
+//                     int temp = nums1[i];
+//                     nums1[i] = nums1[j];
+//                     nums1[j] = temp;
+//                 }
+//             }
+//         }
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> nums1 = {1,2,3,0,0,0};
+//     vector<int> nums2 = {2,5,6};
+
+//     obj.merge(nums1, 3, nums2, 3);
+
+//     for(int i = 0; i < nums1.size(); i++)
+//         cout << nums1[i] << " ";
 // }
