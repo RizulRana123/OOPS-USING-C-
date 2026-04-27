@@ -1,4 +1,4 @@
-//1.wap for two numbers
+//1.wap for sum of  two numbers
 
 // #include <iostream>
 // using namespace std;
@@ -321,7 +321,8 @@
 // }
 
 
-// 17.WAP to demonstrate default constructor 
+// 17.WAP to demonstrate default constructor
+
 
 // #include <iostream>
 // using namespace std;
@@ -350,7 +351,8 @@
 // }
 
 
-// 18.WAP to demonstrate parameterized constructor 
+// 18.WAP to demonstrate parameterized constructor
+
 
 // #include <iostream>
 // using namespace std;
@@ -380,7 +382,8 @@
 
 
 
-// 19. WAP to demonstrate copy constructor 
+// 19. WAP to demonstrate copy constructor
+
  
 // #include <iostream>
 // using namespace std;
@@ -393,7 +396,7 @@
 //     }
 
    
-//     Student(const Student &s) {
+//     Student( Student &s) {
 //         roll = s.roll;
 //       
 //     }
@@ -411,7 +414,8 @@
 // }
 
 
-// 20.WAP to demonstrate move constructor 
+// 20.WAP to demonstrate move constructor
+
 
 // #include <iostream>
 // using namespace std;
@@ -484,7 +488,7 @@
 //         cout << "Length: " << length << endl;
 //         cout << "Breadth: " << breadth << endl;
 //         cout << "Area: " << length * breadth << endl;
-//         cout << "------------------\n";
+//        
 //     }
 // };
 
@@ -590,7 +594,6 @@
  
 // 24.wap to print check for pallindrome
 
-
 // #include <iostream>
 // using namespace std;
 
@@ -617,7 +620,7 @@
 //     }
 // };
 
-// 25.wap to print sum of digits of a numeber
+// 25.wap to print sum of digits of a number
 
 
 // #include <iostream>
@@ -912,15 +915,15 @@
 // class PascalTriangle {
 // public:
 //     void generate(int n) {
-//         for (int i = 0; i < n; i++) {
-//            
-//             for (int space = 0; space < n - i - 1; space++) {
+//         for (int i = 1; i < n; i++) {
+           
+//             for (int space = 1; space < n - i ; space++) {
 //                 cout << " ";
 //             }
 //             int number = 1;
-//             for (int j = 0; j <= i; j++) {
+//             for (int j = 1; j <= i; j++) {
 //                 cout << number << " ";
-//                 number = number * (i - j) / (j + 1);
+//                 number = number * (i - j) / (j );
 //             }
 //             cout << endl;
 //         }
@@ -1263,6 +1266,7 @@
 // };
 // int main(){
 // Student s1;//default constructor
+
 // s1.input();
 // s1.calculate();
 // s1.display();
@@ -1271,6 +1275,7 @@
 
 // 41.wap for creating a banking system using encapsulation
 //banking system
+
 // #include <iostream>
 // #include <string>
 // using namespace std;
@@ -1422,6 +1427,9 @@
 //     ArrayInsert obj;
 //     obj.insertElement();
 // }
+
+
+
 // 44.wap to delete a particular element in a given array
 // #include <iostream>
 // using namespace std;
@@ -1605,6 +1613,8 @@
 //     HollowPyramid obj;
 //     obj.print(5);
 // }
+
+
 // 50.wap to print hollow diamond
 // #include <iostream>
 // using namespace std;
@@ -1648,7 +1658,6 @@
 // 51.wap to print x star pattern
 // #include <iostream>
 // using namespace std;
-
 // class XPattern {
 // public:
 //     void print(int n){
@@ -1668,6 +1677,8 @@
 //     XPattern obj;
 //     obj.print(5);
 // }
+
+
 // 52.wap to print binary triangle
 // #include <iostream>
 // using namespace std;
@@ -1688,6 +1699,8 @@
 //     BinaryTriangle obj;
 //     obj.print(5);
 // }
+
+
 // 53.wap to print star butterfly
 // #include <iostream>
 // using namespace std;
@@ -1730,6 +1743,8 @@
 //     Butterfly obj;
 //     obj.print(5);
 // }
+
+
 // 54.wap to check for a perfect number
 // #include <iostream>
 // using namespace std;
@@ -1761,6 +1776,9 @@
 
 //     obj.check(n);
 // }
+
+
+
 // 55. wap to check for prime number
 // #include <iostream>
 // using namespace std;
@@ -1809,14 +1827,7 @@
 //             // data = value;  
 //             next = nullptr;
 //          }
-//          void display(node* head){
-//           node* p = head;
-//           while(p)     
-//           {             
-//             cout<<p->data<<"->";
-//             p = p->next;  
-//           }
-//          }
+//       
 // };
 //   void display(node* head){
 //           node* p = head;
@@ -1834,6 +1845,7 @@
 //     n1->next = n2;
 //     n2->next =n3;
 //     display(n1);
+// return 0;
 // }
 
 
@@ -1865,7 +1877,9 @@
 //     n2->next =n3;
 //     n1 = insertatstart(n1,90);
 //     return 0;
-//  }                      
+//  }                  
+
+
 // 58. wap to insert an element at the end of the linked lis
 // #include<iostream>
 // using namespace std;
@@ -1903,97 +1917,78 @@
 // #include <iostream>
 // using namespace std;
 
-// class Node {
-// public:
+// struct Node {
 //     int data;
 //     Node* next;
 // };
 
-// class LinkedList {
-// private:
-//     Node* head;
+// void insertBefore(Node*& head, int key, int newData) {
 
-// public:
-//     LinkedList() {
-//         head = NULL;
+//     if (head == NULL) {
+//         cout << "List is empty\n";
+//         return;
 //     }
 
-//     void insertEnd(int value) {
+    
+//     if (head->data == key) {
 //         Node* newNode = new Node();
-//         newNode->data = value;
-//         newNode->next = NULL;
-
-//         if(head == NULL) {
-//             head = newNode;
-//             return;
-//         }
-
-//         Node* temp = head;
-//         while(temp->next != NULL)
-//             temp = temp->next;
-
-//         temp->next = newNode;
+//         newNode->data = newData;
+//         newNode->next = head;
+//         head = newNode;
+//         return;
 //     }
 
-//     void insertBefore(int target, int value) {
+//     Node* curr = head;
 
-//         if(head == NULL) {
-//             cout<<"List is empty\n";
-//             return;
-//         }
-
-//         if(head->data == target) {
-//             Node* newNode = new Node();
-//             newNode->data = value;
-//             newNode->next = head;
-//             head = newNode;
-//             return;
-//         }
-
-//         Node* temp = head;
-
-//         while(temp->next != NULL && temp->next->data != target)
-//             temp = temp->next;
-
-//         if(temp->next == NULL) {
-//             cout<<"Target not found\n";
-//             return;
-//         }
-
-//         Node* newNode = new Node();
-//         newNode->data = value;
-//         newNode->next = temp->next;
-//         temp->next = newNode;
+//     while (curr->next != NULL && curr->next->data != key) {
+//         curr = curr->next;
 //     }
 
-//     void display() {
-//         Node* temp = head;
-//         while(temp != NULL) {
-//             cout<<temp->data<<" -> ";
-//             temp = temp->next;
-//         }
-//         cout<<"NULL\n";
+
+//     if (curr->next == NULL) {
+//         cout << "Element not found\n";
+//         return;
 //     }
-// };
 
-// int main() {
-
-//     LinkedList list;
-
-//     list.insertEnd(10);
-//     list.insertEnd(20);
-//     list.insertEnd(30);
-//     list.insertEnd(40);
-
-//     cout<<"Original List:\n";
-//     list.display();
-
-//     list.insertBefore(30,25);
-//  
-//     list.display();
-// return 0;
+    
+//     Node* newNode = new Node();
+//     newNode->data = newData;
+//     newNode->next = curr->next;
+//     curr->next = newNode;
 // }
 
+
+// void display(Node* head) {
+//     while (head != NULL) {
+//         cout << head->data << " -> ";
+//         head = head->next;
+//     }
+//     cout << "NULL\n";
+// }
+
+// int main() {
+   
+//     Node* head = new Node{10, NULL};
+//     head->next = new Node{20, NULL};
+//     head->next->next = new Node{30, NULL};
+//     head->next->next->next = new Node{40, NULL};
+
+//     cout << "Original List:\n";
+//     display(head);
+
+//     int key, value;
+//     cout << "Enter element before which to insert: ";
+//     cin >> key;
+//     cout << "Enter new value: ";
+//     cin >> value;
+
+//     insertBefore(head, key, value);
+
+//     cout << "Updated List:\n";
+//     display(head);
+
+//     return 0;
+// }
 
 
 // 60.wap to delete an element at the start of a linked list
@@ -2022,6 +2017,8 @@
 //     n2->next =n3;
 //     n1 = n1->deleteatstart(n1);
 //     return 0;}
+
+
 
 // 61.wap to delete an element at the end of a linked list
 // #include <iostream>
@@ -2054,98 +2051,85 @@
 //     return 0;}
 
 
+
+
 // 62.wap to delete before an element in a linked list
 // #include <iostream>
 // using namespace std;
 
-// class Node {
-// public:
+// struct Node {
 //     int data;
 //     Node* next;
 // };
 
-// class LinkedList {
-// private:
-//     Node* head;
+// void deleteBefore(Node*& head, int key) {
 
-// public:
-//     LinkedList() {
-//         head = NULL;
+//     if (head == NULL || head->next == NULL) {
+//         cout << "Deletion not possible\n";
+//         return;
 //     }
 
-//     void insertEnd(int value) {
-//         Node* newNode = new Node();
-//         newNode->data = value;
-//         newNode->next = NULL;
-
-//         if(head == NULL) {
-//             head = newNode;
-//             return;
-//         }
-
-//         Node* temp = head;
-//         while(temp->next != NULL)
-//             temp = temp->next;
-
-//         temp->next = newNode;
+    
+//     if (head->data == key) {
+//         cout << "No node exists before the given element\n";
+//         return;
 //     }
 
-//     void deleteBefore(int target) {
+//     Node *prev = NULL, *curr = head, *nextNode = head->next;
 
-//         if(head == NULL || head->next == NULL) {
-//             cout<<"Not enough nodes\n";
-//             return;
-//         }
-
-//         if(head->next->data == target) {
-//             Node* temp = head;
-//             head = head->next;
-//             delete temp;
-//             return;
-//         }
-
-//         Node* temp = head;
-
-//         while(temp->next->next != NULL && temp->next->next->data != target)
-//             temp = temp->next;
-
-//         if(temp->next->next == NULL) {
-//             cout<<"Target not found\n";
-//             return;
-//         }
-
-//         Node* del = temp->next;
-//         temp->next = del->next;
-//         delete del;
+//     // Traverse list
+//     while (nextNode != NULL && nextNode->data != key) {
+//         prev = curr;
+//         curr = nextNode;
+//         nextNode = nextNode->next;
 //     }
 
-//     void display() {
-//         Node* temp = head;
-//         while(temp != NULL) {
-//             cout<<temp->data<<" -> ";
-//             temp = temp->next;
-//         }
-//         cout<<"NULL\n";
+//     // If key not found
+//     if (nextNode == NULL) {
+//         cout << "Element not found\n";
+//         return;
 //     }
-// };
+
+//     // Deleting node before key
+//     if (prev == NULL) {
+//         // Delete head
+//         head = curr->next;
+//         delete curr;
+//     } else {
+//         prev->next = curr->next;
+//         delete curr;
+//     }
+
+//     cout << "Node deleted successfully\n";
+// }
+
+// void display(Node* head) {
+//     while (head != NULL) {
+//         cout << head->data << " -> ";
+//         head = head->next;
+//     }
+//     cout << "NULL\n";
+// }
 
 // int main() {
+//     Node* head = new Node{10, NULL};
+//     head->next = new Node{20, NULL};
+//     head->next->next = new Node{30, NULL};
+//     head->next->next->next = new Node{40, NULL};
 
-//     LinkedList list;
+//     cout << "Original List:\n";
+//     display(head);
 
-//     list.insertEnd(10);
-//     list.insertEnd(20);
-//     list.insertEnd(30);
-//     list.insertEnd(40);
+//     int key;
+//     cout << "Enter element: ";
+//     cin >> key;
 
-//     cout<<"Original List:\n";
-//     list.display();
+//     deleteBefore(head, key);
 
-//     list.deleteBefore(30);
+//     cout << "Updated List:\n";
+//     display(head);
 
-//     cout<<"After Deleting Before 30:\n";
-//     list.display();
-// return 0
+//     return 0;
 // }
 
 
@@ -2154,87 +2138,45 @@
 // #include <iostream>
 // using namespace std;
 
-// class Node {
-// public:
+// struct Node {
 //     int data;
 //     Node* next;
 // };
 
-// class LinkedList {
-// private:
-//     Node* head;
-
-// public:
-//     LinkedList() {
-//         head = NULL;
+// bool search(Node* head, int key) {
+//     Node* current = head;
+//     while (current != NULL) {
+//         if (current->data == key)
+//             return true;
+//         current = current->next;
 //     }
-
-//     void insertEnd(int value) {
-//         Node* newNode = new Node();
-//         newNode->data = value;
-//         newNode->next = NULL;
-
-//         if(head == NULL) {
-//             head = newNode;
-//             return;
-//         }
-
-//         Node* temp = head;
-
-//         while(temp->next != NULL)
-//             temp = temp->next;
-
-//         temp->next = newNode;
-//     }
-
-//     void search(int key) {
-
-//         Node* temp = head;
-//         int position = 1;
-
-//         while(temp != NULL) {
-
-//             if(temp->data == key) {
-//                 cout<<"Element found at position "<<position<<endl;
-//                 return;
-//             }
-
-//             temp = temp->next;
-//             position++;
-//         }
-
-//         cout<<"Element not found"<<endl;
-//     }
-
-//     void display() {
-//         Node* temp = head;
-
-//         while(temp != NULL) {
-//             cout<<temp->data<<" -> ";
-//             temp = temp->next;
-//         }
-
-//         cout<<"NULL"<<endl;
-//     }
-// };
+//     return false;
+// }
 
 // int main() {
 
-//     LinkedList list;
+//     Node* head = new Node();
+//     head->data = 10;
 
-//     list.insertEnd(10);
-//     list.insertEnd(20);
-//     list.insertEnd(30);
-//     list.insertEnd(40);
+//     head->next = new Node();
+//     head->next->data = 20;
 
-//     cout<<"Linked List:"<<endl;
-//     list.display();
+//     head->next->next = new Node();
+//     head->next->next->data = 30;
+
+//     head->next->next->next = new Node();
+//     head->next->next->next->data = 40;
+
+//     head->next->next->next->next = NULL;
 
 //     int key;
-//     cout<<"Enter element to search: ";
-//     cin>>key;
+//     cout << "Enter element to search: ";
+//     cin >> key;
 
-//     list.search(key);
+//     if (search(head, key))
+//         cout << "Element found in the linked list.";
+//     else
+//         cout << "Element not found in the linked list.";
 
 //     return 0;
 // }
@@ -2243,77 +2185,41 @@
 // #include <iostream>
 // using namespace std;
 
-// class Node {
-// public:
+// struct Node {
 //     int data;
 //     Node* next;
-
-//     Node(int val) {
-//         data = val;
-//         next = NULL;
-//     }
 // };
 
-// class LinkedList {
-// private:
-//     Node* head;
+// void reverseList(Node*& head) {
+//     Node* prev = NULL;
+//     Node* curr = head;
+//     Node* next = NULL;
 
-// public:
-//     LinkedList() {
-//         head = NULL;
+//     while (curr != NULL) {
+//         next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = next;
 //     }
+//     head = prev;
+// }
 
-//     void insert(int val) {
-//         Node* newNode = new Node(val);
-//         if (!head) {
-//             head = newNode;
-//             return;
-//         }
-//         Node* temp = head;
-//         while (temp->next)
-//             temp = temp->next;
-//         temp->next = newNode;
+// void display(Node* head) {
+//     while (head != NULL) {
+//         cout << head->data << " -> ";
+//         head = head->next;
 //     }
-
-//     void reverse() {
-//         Node* prev = NULL;
-//         Node* curr = head;
-//         Node* next = NULL;
-
-//         while (curr != NULL) {
-//             next = curr->next;   // store next node
-//             curr->next = prev;   // reverse link
-//             prev = curr;         // move prev forward
-//             curr = next;         // move curr forward
-//         }
-
-//         head = prev; // update head
-//     }
-
-//     void display() {
-//         Node* temp = head;
-//         while (temp) {
-//             cout << temp->data << " -> ";
-//             temp = temp->next;
-//         }
-//         cout << "NULL\n";
-//     }
-// };
+//     cout << "NULL";
+// }
 
 // int main() {
-//     LinkedList l;
-//     l.insert(10);
-//     l.insert(20);
-//     l.insert(30);
-//     l.insert(40);
+//     Node* head = new Node{10, NULL};
+//     head->next = new Node{20, NULL};
+//     head->next->next = new Node{30, NULL};
+//     head->next->next->next = new Node{40, NULL};
 
-//     cout << "Original List:\n";
-//     l.display();
-
-//     l.reverse();
-
-//     cout << "Reversed List:\n";
-//     l.display();
+//     reverseList(head);
+//     display(head);
 
 //     return 0;
 // }
@@ -2330,7 +2236,8 @@
 //     bool issued;
 
 // public:
-//     // Constructor
+//     // constructor
+
 //     Library() {
 //         issued = false;
 //     }
@@ -2538,6 +2445,8 @@
 //   m.display();
 //     return 0;
 // }
+
+
 // 68.wap to add two matrices
 
 // #include <iostream>
@@ -2666,6 +2575,8 @@
 //         else if(ch==3) m.display();
 //     } while(ch!=4);
 // }
+
+
 
 // 70.wap to perfor dot product on two vectors
 // #include <iostream>
@@ -4826,7 +4737,772 @@
 //     return 0;
 // }
 
-// 134. LeetCode #66 — Plus One
+
+// 134. LeetCode #142 — Linked List Cycle II
+
+// Given a linked list, return the node where the cycle begins.
+// If there is no cycle, return NULL.
+
+// #include <iostream>
+// using namespace std;
+
+// class ListNode {
+// public:
+//     int val;
+//     ListNode* next;
+//     ListNode(int x) : val(x), next(nullptr) {}
+// };
+
+// class Solution {
+// public:
+//     ListNode* detectCycle(ListNode *head) {
+//         if(!head) return nullptr;
+
+//         ListNode *slow = head, *fast = head;
+
+    
+//         while(fast && fast->next) {
+//             slow = slow->next;
+//             fast = fast->next->next;
+
+//             if(slow == fast) {
+                
+//                 ListNode* entry = head;
+//                 while(entry != slow) {
+//                     entry = entry->next;
+//                     slow = slow->next;
+//                 }
+//                 return entry;
+//             }
+//         }
+//         return nullptr;
+//     }
+// };
+
+// int main() {
+ 
+//     ListNode* head = new ListNode(3);
+//     ListNode* n1 = new ListNode(2);
+//     ListNode* n2 = new ListNode(0);
+//     ListNode* n3 = new ListNode(-4);
+
+//     head->next = n1;
+//     n1->next = n2;
+//     n2->next = n3;
+//     n3->next = n1; 
+
+//     Solution s;
+//     ListNode* res = s.detectCycle(head);
+
+//     if(res)
+//         cout << "Cycle starts at node: " << res->val;
+//     else
+//         cout << "No cycle";
+//     return 0;
+// }
+
+
+// 135. LeetCode #118 — Pascal’s Triangle{matrix..}
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     vector<vector<int>> generate(int numRows) {
+//         vector<vector<int>> triangle;
+
+//         for (int i = 0; i < numRows; i++) {
+//             vector<int> row(i + 1, 1);
+
+//             for (int j = 1; j < i; j++) {
+//                 row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+//             }
+
+//             triangle.push_back(row);
+//         }
+
+//         return triangle;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     int numRows = 5;
+
+//     vector<vector<int>> result = obj.generate(numRows);
+
+//     for (auto row : result) {
+//         for (auto val : row)
+//             cout << val << " ";
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+//  136. HackerRank — Staircase
+// #include <iostream>
+// using namespace std;
+
+// class Staircase {
+// public:
+//     void printStaircase(int n) {
+//         for (int i = 1; i <= n; i++) {
+//             for (int j = 1; j <= n - i; j++)
+//                 cout << " ";
+//             for (int j = 1; j <= i; j++)
+//                 cout << "#";
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Staircase obj;
+//     int n = 5;
+//     obj.printStaircase(n);
+//     return 0;
+// }
+
+
+// 137 LeetCode #119 — Pascal’s Triangle II
+// Problem: Given an integer rowIndex, return the rowIndex-th (0-indexed) row of Pascal’s triangle.
+// Example
+// Input: rowIndex = 3
+// Output: [1,3,3,1]
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     vector<int> getRow(int rowIndex) {
+//         vector<int> row(rowIndex + 1, 1);
+
+//         for (int i = 1; i < rowIndex; i++) {
+//             for (int j = i; j > 0; j--) {
+//                 row[j] += row[j - 1];
+//             }
+//         }
+
+//         return row;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     int rowIndex = 4;
+
+//     vector<int> result = obj.getRow(rowIndex);
+
+//     for (int val : result)
+//         cout << val << " ";
+
+//     return 0;
+// }
+
+
+// 138. HackerRank — Plus Minus
+// Problem:Given an array of integers, calculate the ratios of:
+// positive numbers
+// negative numbers
+// zeros
+
+// Print each value on a new line with 6 decimal places.
+
+// Example
+// Input: [-4, 3, -9, 0, 4, 1]
+
+// Output:
+// 0.500000
+// 0.333333
+// 0.166667
+
+// #include <iostream>
+// #include <vector>
+// #include <iomanip>
+// using namespace std;
+
+// class Solution {
+// public:
+//     void plusMinus(vector<int>& arr) {
+//         int pos = 0, neg = 0, zero = 0;
+//         int n = arr.size();
+
+//         for (int x : arr) {
+//             if (x > 0) pos++;
+//             else if (x < 0) neg++;
+//             else zero++;
+//         }
+
+//         cout << fixed << setprecision(6);
+//         cout << (double)pos / n << endl;
+//         cout << (double)neg / n << endl;
+//         cout << (double)zero / n << endl;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     vector<int> arr = {-4, 3, -9, 0, 4, 1};
+
+//     obj.plusMinus(arr);
+
+//     return 0;
+// }
+
+
+//  139. LeetCode #59 — Spiral Matrix II
+//  Problem: Given n, generate an n x n matrix filled with elements from 1 to n² in spiral order.
+
+// Output:
+// [
+//  [1,2,3],
+//  [8,9,4],
+//  [7,6,5]
+// ]
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     vector<vector<int>> generateMatrix(int n) {
+//         vector<vector<int>> matrix(n, vector<int>(n, 0));
+
+//         int top = 0, bottom = n - 1;
+//         int left = 0, right = n - 1;
+//         int num = 1;
+
+//         while (top <= bottom && left <= right) {
+//             for (int i = left; i <= right; i++)
+//                 matrix[top][i] = num++;
+//             top++;
+
+//             for (int i = top; i <= bottom; i++)
+//                 matrix[i][right] = num++;
+//             right--;
+
+//             if (top <= bottom) {
+//                 for (int i = right; i >= left; i--)
+//                     matrix[bottom][i] = num++;
+//                 bottom--;
+//             }
+
+//             if (left <= right) {
+//                 for (int i = bottom; i >= top; i--)
+//                     matrix[i][left] = num++;
+//                 left++;
+//             }
+//         }
+
+//         return matrix;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+//     int n = 3;
+
+//     vector<vector<int>> result = obj.generateMatrix(n);
+
+//     for (auto row : result) {
+//         for (auto val : row)
+//             cout << val << " ";
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+//  140. HackerRank — Hollow Square Pattern 
+
+// #include <iostream>
+// using namespace std;
+
+// class HollowSquare {
+// public:
+//     void printPattern(int n) {
+//         for (int i = 1; i <= n; i++) {
+//             for (int j = 1; j <= n; j++) {
+//                 if (i == 1 || i == n || j == 1 || j == n)
+//                     cout << "*";
+//                 else
+//                     cout << " ";
+//             }
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     HollowSquare obj;
+//     int n = 5;
+//     obj.printPattern(n);
+//     return 0;
+// }
+
+
+
+
+//  141. LeetCode #54 — Spiral Matrix
+// Problem: Given an m x n matrix, return all elements in spiral order.
+
+// Example
+// Input:
+// [
+//  [1,2,3],
+//  [4,5,6],
+//  [7,8,9]
+// ]
+// Output:
+// [1,2,3,6,9,8,7,4,5]
+
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+// public:
+//     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+//         vector<int> result;
+
+//         int top = 0, bottom = matrix.size() - 1;
+//         int left = 0, right = matrix[0].size() - 1;
+
+//         while (top <= bottom && left <= right) {
+
+//             for (int i = left; i <= right; i++)
+//                 result.push_back(matrix[top][i]);
+//             top++;
+
+//             for (int i = top; i <= bottom; i++)
+//                 result.push_back(matrix[i][right]);
+//             right--;
+
+//             if (top <= bottom) {
+//                 for (int i = right; i >= left; i--)
+//                     result.push_back(matrix[bottom][i]);
+//                 bottom--;
+//             }
+
+//             if (left <= right) {
+//                 for (int i = bottom; i >= top; i--)
+//                     result.push_back(matrix[i][left]);
+//                 left++;
+//             }
+//         }
+
+//         return result;
+//     }
+// };
+
+// int main() {
+//     Solution obj;
+
+//     vector<vector<int>> matrix = {
+//         {1,2,3},
+//         {4,5,6},
+//         {7,8,9}
+//     };
+
+//     vector<int> result = obj.spiralOrder(matrix);
+
+//     for (int x : result)
+//         cout << x << " ";
+
+//     return 0;
+// }
+
+
+
+
+
+// 142. HackerRank — Diamond Pattern
+
+// #include <iostream>
+// using namespace std;
+
+// class Diamond {
+// public:
+//     void printPattern(int n) {
+
+    
+//         for (int i = 1; i <= n; i++) {
+//             for (int j = 1; j <= n - i; j++)
+//                 cout << " ";
+//             for (int j = 1; j <= 2 * i - 1; j++)
+//                 cout << "*";
+//             cout << endl;
+//         }
+
+//         for (int i = n - 1; i >= 1; i--) {
+//             for (int j = 1; j <= n - i; j++)
+//                 cout << " ";
+//             for (int j = 1; j <= 2 * i - 1; j++)
+//                 cout << "*";
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Diamond obj;
+//     int n = 3;
+//     obj.printPattern(n);
+//     return 0;
+// }
+
+
+
+
+// 143.HackerRank -- Hollow Pyramid
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+
+//         for (int j = 1; j <= 2*i-1; j++) {
+//             if (j == 1 || j == 2*i-1 || i == n)
+//                 cout << "*";
+//             else
+//                 cout << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+
+
+// 145.HackerRank-- Hollow Diamond
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+//         for (int j = 1; j <= 2*i-1; j++) {
+//             if (j == 1 || j == 2*i-1)
+//                 cout << "*";
+//             else
+//                 cout << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     for (int i = n-1; i >= 1; i--) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+//         for (int j = 1; j <= 2*i-1; j++) {
+//             if (j == 1 || j == 2*i-1)
+//                 cout << "*";
+//             else
+//                 cout << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+
+// 146. HackerRank --Palindrome Triangle
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+
+//         for (int j = i; j >= 1; j--) cout << j;
+//         for (int j = 2; j <= i; j++) cout << j;
+
+//         cout << endl;
+//     }
+// retrun 0;
+// }
+
+
+
+// 147. HackerRank-- Pattern
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n; j++) {
+//             if (j == i || j == n-i+1)
+//                 cout << "*";
+//             else
+//                 cout << " ";
+//         }
+//         cout << endl;
+//     }
+// return 0;
+// }
+
+
+// 148. HackerRank - Hourglass Pattern
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     for (int i = n; i >= 1; i--) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+//         for (int j = 1; j <= 2*i-1; j++) cout << "*";
+//         cout << endl;
+//     }
+
+//     for (int i = 2; i <= n; i++) {
+//         for (int j = 1; j <= n-i; j++) cout << " ";
+//         for (int j = 1; j <= 2*i-1; j++) cout << "*";
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+// 149. HackerRank — Triangle Quest
+// For n = 5:
+// 1
+// 22
+// 333
+// 4444
+
+// #include <iostream>
+// using namespace std;
+
+// class TriangleQuest {
+// public:
+//     void printPattern(int n) {
+//         for(int i = 1; i < n; i++) {
+//             for(int j = 0; j < i; j++)
+//                 cout << i;
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     TriangleQuest obj;
+//     obj.printPattern(6);
+// }
+
+
+// 150. hackerRank Pallindrom pyramid
+// #include <iostream>
+// using namespace std;
+
+// class PalindromePyramid {
+// public:
+//     void printPattern(int n) {
+//         for (int i = 1; i <= n; i++) {
+
+//             for (int j = 1; j <= n - i; j++)
+//                 cout << " ";
+
+//             for (int j = 1; j <= i; j++)
+//                 cout << j;
+
+//             for (int j = i - 1; j >= 1; j--)
+//                 cout << j;
+
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     PalindromePyramid obj;
+//     int n = 5;
+//     obj.printPattern(n);
+//     return 0;
+// }
+
+
+
+
+// 151.HackerRank - Binary Triangle
+
+// #include <iostream>
+// using namespace std;
+
+// class BinaryTriangle {
+// public:
+//     void printPattern(int n) {
+
+//         for (int i = 1; i <= n; i++) {
+//             int val = (i % 2 == 1) ? 1 : 0;
+
+//             for (int j = 1; j <= i; j++) {
+//                 cout << val;
+//                 val = 1 - val;
+//             }
+
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     BinaryTriangle obj;
+//     int n = 5;
+//     obj.printPattern(n);
+//     return 0;
+// }
+
+
+// 152. HackerRank – Checkerboard Pattern
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n, m;
+//     cin >> n >> m;
+
+//     for(int i = 0; i < n; i++) {
+//         for(int j = 0; j < m; j++) {
+//             if((i + j) % 2 == 0) cout << "*";
+//             else cout << "#";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+
+
+// 153. HackerRank — Printing Pattern 
+// Problem Description
+
+// Print a square pattern of size 2n-1 where numbers decrease towards center.
+
+// Example (n = 3):
+
+// 3 3 3 3 3
+// 3 2 2 2 3
+// 3 2 1 2 3
+// 3 2 2 2 3
+// 3 3 3 3 3
+// OOP C++ Solution
+// #include <iostream>
+// using namespace std;
+
+// class Pattern {
+// public:
+//     void printPattern(int n) {
+//         int size = 2*n - 1;
+//         for(int i = 0; i < size; i++) {
+//             for(int j = 0; j < size; j++) {
+//                 int val = n - min(min(i, j), min(size-1-i, size-1-j));
+//                 cout << val << " ";
+//             }
+//             cout << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Pattern obj;
+//     obj.printPattern(3);
+// }
+
+
+
+// 154. HackerRank — Rangoli Pattern
+// Problem Description
+
+// Print alphabet rangoli of size n.
+
+// Example (n = 3):
+
+// ----c----
+// --c-b-c--
+// c-b-a-b-c
+// --c-b-c--
+// ----c----
+
+// #include <iostream>
+// using namespace std;
+// class Rangoli {
+// public:
+//       Rangoli(int n) {
+//         int width = 4*n - 3;
+
+//         for(int i = 0; i < n; i++) {
+//             string s = "";
+//             for(int j = n-1; j >= n-i; j--) {
+//                 s += char('a' + j);
+//                 s += "-";
+//             }
+//             s += char('a' + (n-i-1));
+//             for(int j = n-i; j < n; j++) {
+//                 s += "-";
+//                 s += char('a' + j);
+//             }
+
+//             int dash = (width - s.size()) / 2;
+//             cout << string(dash, '-') << s << string(dash, '-') << endl;
+//         }
+
+//         for(int i = n-2; i >= 0; i--) {
+//             string s = "";
+//             for(int j = n-1; j >= n-i; j--) {
+//                 s += char('a' + j);
+//                 s += "-";
+//             }
+//             s += char('a' + (n-i-1));
+//             for(int j = n-i; j < n; j++) {
+//                 s += "-";
+//                 s += char('a' + j);
+//             }
+
+//             int dash = (width - s.size()) / 2;
+//             cout << string(dash, '-') << s << string(dash, '-') << endl;
+//         }
+//     }
+// };
+
+// int main() {
+//     Rangoli r(3);
+//     return 0;
+// }
+
+
+
+
+// 155. LeetCode #66 — Plus One
 
 // Problem:
 // Given a number represented as an array of digits, increment it by one.
@@ -4858,7 +5534,7 @@
 // }
 
 
-// 135. LeetCode #118 — Pascal's Triangle
+// 156. LeetCode #118 — Pascal's Triangle
 
 // Problem:
 // Generate the first numRows of Pascal’s triangle.
@@ -4894,7 +5570,7 @@
 // }
 
 
-// 136. LeetCode #209 — Minimum Size Subarray Sum
+// 157. LeetCode #209 — Minimum Size Subarray Sum
 
 // Problem:
 // Given an array of positive integers nums and an integer target, return the minimal length of a
@@ -4927,7 +5603,7 @@
 
 
 
-// 137. LeetCode #560 — Subarray Sum Equals K
+// 158. LeetCode #560 — Subarray Sum Equals K
 
 // Problem:
 // Given an integer array nums and integer k, return total number of continuous subarrays whose sum equals k.
@@ -4961,7 +5637,7 @@
 // }
 
 
-// 138. LeetCode #238 — Product of Array Except Self
+// 159. LeetCode #238 — Product of Array Except Self
 
 // Problem:
 // Return an array such that each element is the product of all other elements except itself. No division allowed.
@@ -5000,7 +5676,7 @@
 // }
 
 
-// 138. LeetCode #152 — Maximum Product Subarray
+// 160. LeetCode #152 — Maximum Product Subarray
 
 // Problem:
 // Find contiguous subarray with the largest product.
@@ -5034,7 +5710,7 @@
 // }
 
 
-// 140. LeetCode #11 — Container With Most Water
+// 161. LeetCode #11 — Container With Most Water
 
 // Problem:
 // Find two lines that together with x-axis form a container holding the most water.
@@ -5068,7 +5744,7 @@
 // }
 
 
-// 141. LeetCode #41 — First Missing Positive
+// 162. LeetCode #41 — First Missing Positive
 // Problem:
 // Given an unsorted integer array nums, return the smallest missing positive integer.
 // Constraint: must run in O(n) time and use constant extra space.
@@ -5104,7 +5780,7 @@
 
 
 
-// 142. LeetCode #128 — Longest Consecutive Sequence
+// 163. LeetCode #128 — Longest Consecutive Sequence
 // Problem:
 // Given an unsorted array, return the length of the longest consecutive elements sequence.
 // Must run in O(n) time.
@@ -5146,7 +5822,7 @@
 
 
 
-// 143. LeetCode #75 — Sort Colors
+// 164. LeetCode #75 — Sort Colors
 
 // Problem:
 // Sort an array containing only 0, 1, and 2 (dutch National Flag problem) in-place.
@@ -5184,7 +5860,7 @@
 
 
 
-// 145 LeetCode #24 — Swap Nodes in Pairs
+// 165 LeetCode #24 — Swap Nodes in Pairs
 
 // #include <iostream>
 // using namespace std;
@@ -5233,7 +5909,8 @@
 //     print(head);
 // }
 
-// 146 LeetCode #61 — Rotate List
+
+// 166 LeetCode #61 — Rotate List
 
 // #include <iostream>
 // using namespace std;
@@ -5285,7 +5962,7 @@
 //     print(head);
 // }
 
-// 136 LeetCode #92 — Reverse Linked List II
+// 167 LeetCode #92 — Reverse Linked List II
 
 
 // #include <iostream>
@@ -5337,7 +6014,7 @@
 // }
 
 
-// 147 LeetCode #138 — Copy List with Random Pointer
+// 168 LeetCode #138 — Copy List with Random Pointer
 
 // #include <iostream>
 // #include <unordered_map>
@@ -5392,7 +6069,7 @@
 //     print(copy);
 // }
 
-// 148 LeetCode #143 — Reorder List
+// 169 LeetCode #143 — Reorder List
 
 // #include <iostream>
 // using namespace std;
@@ -5458,7 +6135,7 @@
 //     print(head);
 // }
 
-// 149 LeetCode #147 — Insertion Sort List
+// 170 LeetCode #147 — Insertion Sort List
 
 // #include <iostream>
 // using namespace std;
@@ -5501,7 +6178,7 @@
 //     while(head){ cout<<head->val<<" "; head=head->next; }
 // }
 
-// 150 LeetCode #203 — Remove Elements
+// 171 LeetCode #203 — Remove Elements
 
 // #include <iostream>
 // using namespace std;
@@ -5540,7 +6217,7 @@
 //     while(head){ cout<<head->val<<" "; head=head->next; }
 // }
 
-// 151 LeetCode #725 — Split List in Parts
+// 172 LeetCode #725 — Split List in Parts
 
 // #include <iostream>
 // #include <vector>
@@ -5594,7 +6271,7 @@
 //     }
 // }
 
-// 152 HackerRank — Merge Sorted Lists
+// 173 HackerRank — Merge Sorted Lists
 
 // #include <iostream>
 // using namespace std;
@@ -5639,7 +6316,9 @@
 //     while(res){ cout<<res->data<<" "; res=res->next; }
 // }
 
-// 153 HackerRank — Remove duplicates
+
+
+// 174 HackerRank — Remove duplicates
 
 // #include <iostream>
 // using namespace std;
@@ -5678,106 +6357,7 @@
 
 
 
-
-
-
-
-
-// 154. HackerRank — Hollow Pyramid
-
-
-// #include <iostream>
-// using namespace std;
-
-// class HollowPyramid {
-// public:
-//     void print(int n) {
-//         for(int i = 1; i <= n; i++) {
-//             for(int j = 1; j <= n-i; j++) cout << " ";
-
-//             for(int j = 1; j <= 2*i-1; j++) {
-//                 if(j == 1 || j == 2*i-1 || i == n)
-//                     cout << "*";
-//                 else
-//                     cout << " ";
-//             }
-//             cout << endl;
-//         }
-//     }
-// };
-
-// int main() {
-//     HollowPyramid obj;
-//     obj.print(4);
-// }
-
-
-
-// 155. HackerRank — Hollow diamond
-
-// #include <iostream>
-// using namespace std;
-
-// class Hollowdiamond {
-// public:
-//     void print(int n) {
-//         // upper
-//         for(int i = 1; i <= n; i++) {
-//             for(int j = 1; j <= n-i; j++) cout << " ";
-//             for(int j = 1; j <= 2*i-1; j++) {
-//                 if(j == 1 || j == 2*i-1)
-//                     cout << "*";
-//                 else
-//                     cout << " ";
-//             }
-//             cout << endl;
-//         }
-//         // lower
-//         for(int i = n-1; i >= 1; i--) {
-//             for(int j = 1; j <= n-i; j++) cout << " ";
-//             for(int j = 1; j <= 2*i-1; j++) {
-//                 if(j == 1 || j == 2*i-1)
-//                     cout << "*";
-//                 else
-//                     cout << " ";
-//             }
-//             cout << endl;
-//         }
-//     }
-// };
-
-// int main() {
-//     Hollowdiamond obj;
-//     obj.print(4);
-// }
-
-
-// 156 HackerRank — Pascal Triangle Pattern (Printed)
-
-// #include <iostream>
-// using namespace std;
-
-// class Pascal {
-// public:
-//     void print(int n) {
-//         for(int i = 0; i < n; i++) {
-//             int val = 1;
-//             for(int j = 0; j <= i; j++) {
-//                 cout << val << " ";
-//                 val = val * (i - j) / (j + 1);
-//             }
-//             cout << endl;
-//         }
-//     }
-// };
-
-// int main() {
-//     Pascal obj;
-//     obj.print(5);
-// }
-
-
-// 157 HackerRank — Snake Pattern Matrix
+// 175 HackerRank — Snake Pattern Matrix
 
 
 // #include <iostream>
@@ -5810,7 +6390,7 @@
 // }
 
 
-// 158. HackerRank — Concentric Star Pattern
+// 176. HackerRank — Concentric Star Pattern
 
 // #include <iostream>
 // using namespace std;
@@ -5836,7 +6416,7 @@
 //     obj.print(5);
 // }
 
-// 159. HackerRank — Number Spiral Pattern
+// 177. HackerRank — Number Spiral Pattern
 
 // #include <iostream>
 // using namespace std;
@@ -5862,7 +6442,7 @@
 // }
 
 
-// 160. HackerRank — Character diamond Pattern
+// 178. HackerRank — Character diamond Pattern
 
 // #include <iostream>
 // using namespace std;
@@ -5877,7 +6457,6 @@
 //             for(int j = i-1; j >= 0; j--) cout << char('A'+j);
 //             cout << endl;
 //         }
-        
 //         for(int i = n-2; i >= 0; i--) {
 //             for(int j = 0; j < n-i-1; j++) cout << " ";
 //             for(int j = 0; j <= i; j++) cout << char('A'+j);
@@ -5892,117 +6471,73 @@
 //     obj.print(5);
 // }
 
-
-// 161. HackerRank – Checkerboard Pattern
+// 178.WAP to implement Queue using Arrays in c++
 // #include <iostream>
 // using namespace std;
 
-// int main() {
-//     int n, m;
-//     cin >> n >> m;
+// class Queue {
+// private:
+//     int *arr;
+//     int front, rear, size;
 
-//     for(int i = 0; i < n; i++) {
-//         for(int j = 0; j < m; j++) {
-//             if((i + j) % 2 == 0) cout << "*";
-//             else cout << "#";
+// public:
+//     Queue(int s) {
+//         size = s;
+//         arr = new int[size];
+//         front = -1;
+//         rear = -1;
+//     }
+
+//     void enqueue(int val) {
+//         if (rear == size - 1) {
+//             cout << "Queue Overflow\n";
+//             return;
+//         }
+//         if (front == -1) front = 0;
+//         arr[++rear] = val;
+//     }
+
+//     void dequeue() {
+//         if (front == -1 || front > rear) {
+//             cout << "Queue Underflow\n";
+//             return;
+//         }
+//         cout << "Deleted: " << arr[front++] << endl;
+//     }
+
+//     void peek() {
+//         if (front == -1 || front > rear) {
+//             cout << "Queue is empty\n";
+//             return;
+//         }
+//         cout << "Front element: " << arr[front] << endl;
+//     }
+
+//     void display() {
+//         if (front == -1 || front > rear) {
+//             cout << "Queue is empty\n";
+//             return;
+//         }
+//         for (int i = front; i <= rear; i++) {
+//             cout << arr[i] << " ";
 //         }
 //         cout << endl;
 //     }
-//     return 0;
-// }
-
-
-// 162. HackerRank — Printing Pattern 
-// Problem description
-
-// Print a square pattern of size 2n-1 where numbers decrease towards center.
-
-// Example (n = 3):
-
-// 3 3 3 3 3
-// 3 2 2 2 3
-// 3 2 1 2 3
-// 3 2 2 2 3
-// 3 3 3 3 3
-// OOP C++ Solution
-// #include <iostream>
-// using namespace std;
-
-// class Pattern {
-// public:
-//     void printPattern(int n) {
-//         int size = 2*n - 1;
-//         for(int i = 0; i < size; i++) {
-//             for(int j = 0; j < size; j++) {
-//                 int val = n - min(min(i, j), min(size-1-i, size-1-j));
-//                 cout << val << " ";
-//             }
-//             cout << endl;
-//         }
-//     }
 // };
 
 // int main() {
-//     Pattern obj;
-//     obj.printPattern(3);
-// }
+//     Queue q(5);
 
-// 163. HackerRank — Rangoli Pattern
-// Problem description
+//     q.enqueue(10);
+//     q.enqueue(20);
+//     q.enqueue(30);
 
-// Print alphabet rangoli of size n.
+//     q.display();
 
-// Example (n = 3):
+//     q.dequeue();
+//     q.display();
 
-// ----c----
-// --c-b-c--
-// c-b-a-b-c
-// --c-b-c--
-// ----c----
+//     q.peek();
 
-// #include <iostream>
-// using namespace std;
-
-// class Rangoli {
-// public:
-//       Rangoli(int n) {
-//         int width = 4*n - 3;
-
-//         for(int i = 0; i < n; i++) {
-//             string s = "";
-//             for(int j = n-1; j >= n-i; j--) {
-//                 s += char('a' + j);
-//                 s += "-";
-//             }
-//             s += char('a' + (n-i-1));
-//             for(int j = n-i; j < n; j++) {
-//                 s += "-";
-//                 s += char('a' + j);
-//             }
-
-//             int dash = (width - s.size()) / 2;
-//             cout << string(dash, '-') << s << string(dash, '-') << endl;
-//         }
-
-//         for(int i = n-2; i >= 0; i--) {
-//             string s = "";
-//             for(int j = n-1; j >= n-i; j--) {
-//                 s += char('a' + j);
-//                 s += "-";
-//             }
-//             s += char('a' + (n-i-1));
-//             for(int j = n-i; j < n; j++) {
-//                 s += "-";
-//                 s += char('a' + j);
-//             }
-
-//             int dash = (width - s.size()) / 2;
-//             cout << string(dash, '-') << s << string(dash, '-') << endl;
-//         }
-//     }
-// };
-
-// int main() {
-//     Rangoldi r(3);
 //     return 0;
 // }
